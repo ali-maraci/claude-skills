@@ -1,0 +1,7 @@
+### Result
+1. [GET] https://app-staging.ab12.example.test/no-such-page-probe => [404] 
+12. [GET] https://app-staging.ab12.example.test/settings?_rsc=k3d9x => [200] 
+13. [GET] https://app-staging.ab12.example.test/api/probe-missing?x=1 => [404] 
+14. [GET] http://127.0.0.1:9/unreachable => [FAILED] net::ERR_UNSAFE_PORT
+
+Note: 10 static requests not shown, run with "static" option to see them.

@@ -1,0 +1,2 @@
+# one exact origin per line
+https://staging.example.test

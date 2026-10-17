@@ -1,0 +1,4 @@
+#!/bin/sh
+# bug-hunt CLI — see ../../SKILL.md
+DIR=$(cd "$(dirname "$0")/.." && pwd)
+exec "$DIR/node_modules/.bin/tsx" "$DIR/src/main.ts" "$@"

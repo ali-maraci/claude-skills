@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Overlay</title>
+<style>body{font:16px/1.5 -apple-system,Helvetica,sans-serif;margin:48px}#panel{display:none}#ov{position:fixed;inset:0;background:rgba(255,255,255,.01)}</style>
+</head><body>
+<button onclick="document.getElementById('panel').style.display='block'">Show details</button>
+<div id="panel"><h2>Details panel</h2></div>
+<!-- A transparent layer (think: a fading cookie banner) covers the page for 1.5 s after load. -->
+<div id="ov"></div>
+<script>setTimeout(() => document.getElementById('ov').remove(), 1500);</script>
+</body></html>

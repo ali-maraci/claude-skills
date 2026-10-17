@@ -1,0 +1,9 @@
+### Result
+Total messages: 6 (Errors: 5, Warnings: 1)
+
+[ERROR] Failed to load resource: the server responded with a status of 404 () @ https://app-staging.ab12.example.test/no-such-page-probe:0
+[ERROR] Failed to load resource: the server responded with a status of 404 () @ https://app-staging.ab12.example.test/favicon.ico:0
+[ERROR] sample console error @ https://app-staging.ab12.example.test/_next/static/chunks/1234-0123456789abcdef.js:0
+[WARNING] sample console warning @ :0
+[ERROR] Failed to load resource: the server responded with a status of 404 () @ https://app-staging.ab12.example.test/api/probe-missing?x=1:0
+[ERROR] Failed to load resource: net::ERR_UNSAFE_PORT @ http://127.0.0.1:9/unreachable:0

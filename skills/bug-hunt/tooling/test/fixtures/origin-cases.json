@@ -1,0 +1,42 @@
+[
+  { "file": null, "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "\n\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "# only a comment\n# https://staging.example.test\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "http://staging.example.test\n", "valid": false, "allowed": [], "denied": ["http://staging.example.test", "https://staging.example.test"] },
+  { "file": "https://localhost\n", "valid": false, "allowed": [], "denied": ["https://localhost"] },
+  { "file": "https://127.0.0.1:3000\n", "valid": false, "allowed": [], "denied": ["https://127.0.0.1:3000"] },
+  { "file": "https://127.1\n", "valid": false, "allowed": [], "denied": ["https://127.1"] },
+  { "file": "https://2130706433\n", "valid": false, "allowed": [], "denied": ["https://2130706433"] },
+  { "file": "https://0x7f000001\n", "valid": false, "allowed": [], "denied": ["https://0x7f000001"] },
+  { "file": "https://a.localhost\n", "valid": false, "allowed": [], "denied": ["https://a.localhost"] },
+  { "file": "https://10.0.0.1\n", "valid": false, "allowed": [], "denied": ["https://10.0.0.1"] },
+  { "file": "https://staging.example.test/\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test", "https://staging.example.test/"] },
+  { "file": "https://staging.example.test/path\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "https://Staging.example.test\n", "valid": false, "allowed": [], "denied": ["https://Staging.example.test", "https://staging.example.test"] },
+  { "file": "^https://.*$\n", "valid": false, "allowed": [], "denied": ["https://anything.example.test", "https://evil.com"] },
+  { "file": "https://*.example.test\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test", "https://evil.example.test"] },
+  { "file": "https://[a-z]+.test\n", "valid": false, "allowed": [], "denied": ["https://staging.test", "https://abc.test"] },
+  { "file": "https://staging.example.test\nhttp://bad.example.test\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "https://staging.example.test\r\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "# comment\r\nhttps://staging.example.test\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": " https://staging.example.test\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "https://staging.example.test \n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  { "file": "https://staging.example.test:99999999\n", "valid": false, "allowed": [], "denied": ["https://staging.example.test"] },
+  {
+    "file": "# staging hosts\nhttps://staging.example.test\n\nhttps://app-staging.ab12.example.test:8443\n",
+    "valid": true,
+    "allowed": ["https://staging.example.test", "https://app-staging.ab12.example.test:8443"],
+    "denied": [
+      "https://staging.example.test.evil.com", "https://evil.com", "https://staging.example.test:444",
+      "http://staging.example.test", "https://example.test", "https://app-staging.ab12.example.test",
+      "https://localhost", "# staging hosts"
+    ]
+  },
+  {
+    "file": "https://staging.example.test",
+    "valid": true,
+    "allowed": ["https://staging.example.test"],
+    "denied": ["https://staging.example.test/", "https://evil.com"]
+  }
+]
